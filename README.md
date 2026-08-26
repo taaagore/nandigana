@@ -15,19 +15,17 @@ A lightweight Bhajan Planner and archive web application inspired by Spotify's U
 .
 ├── .gitignore
 ├── README.md
-├── index.html              # Root redirect to app/index.html
-├── app/
-│   ├── css/
-│   │   └── style.css
-│   ├── js/
-│   │   └── app.js
-│   └── index.html          # Main application page
+├── index.html
+├── css/
+│   └── style.css
+├── js/
+│   └── app.js
 ├── data/
-│   ├── bhajans.json        # Normalized JSON dataset
-│   └── schema.md           # Schema definitions and data field mappings
+│   ├── bhajans.json
+│   └── schema.md
 └── scraper/
-    ├── requirements.txt    # Python dependencies
-    └── scrape_sssmc.py     # Data extraction script
+    ├── requirements.txt
+    └── scrape_sssmc.py
 ```
 
 ## How It Works
@@ -43,43 +41,31 @@ To refresh or download the full bhajan dataset:
 ```bash
 cd scraper
 pip install -r requirements.txt
-
-# Fetch live sung Prasanthi Mandir bhajans
 python scrape_sssmc.py --sub-category "Prasanthi Mandir Bhajans"
-
-# Or run a quick test with 2 pages
-python scrape_sssmc.py --max-pages 2
+# Or: python scrape_sssmc.py --max-pages 2
 ```
 
 This will populate `data/bhajans.json`.
 
 ### 2. Local Preview
 
-Serve from the **root folder** so the app can access `data/bhajans.json`:
+Serve from the project root:
 
 ```bash
-# In the project root directory
 python3 -m http.server 8000
 ```
 
-Open your browser at:
-
-```text
-http://localhost:8000
-```
+Open `http://localhost:8000`.
 
 ## Deployment
 
 ### GitHub Pages
 
-1. Go to **Repository Settings > Pages**.
-2. Select the `main` branch.
-3. Set the folder to `/ (root)`.
-4. The root `index.html` redirects automatically to `app/index.html`.
+Select the `main` branch and `/ (root)` as the Pages source. The root `index.html` is the application entry point.
 
 ### Render
 
-Deploy as a **Static Site**, point the build directory to the repository root (`./`), and publish.
+Deploy as a Static Site, point the build directory to the repository root (`./`), and publish.
 
 ## Data Source
 
