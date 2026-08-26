@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Sri Sathya Sai Nandigāna</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <div class="shell">
+
+    <aside class="sidebar">
+      <div class="brand">
+        <img 
+          src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/66/Sathya_Sai_Baba_in_Darshan.jpg/320px-Sathya_Sai_Baba_in_Darshan.jpg" 
+          alt="Sri Sathya Sai Baba" 
+          class="brand-avatar"
+        />
+        <div class="brand-text">
+          <span class="brand-name">Sri Sathya Sai</span>
+          <span class="brand-sub">Nandigāna</span>
+        </div>
+      </div>
+
+      <nav class="nav">
+        <button class="nav-item is-active" data-view="browse">
+          <span class="nav-icon">⌂</span> Home
+        </button>
+        <button class="nav-item" data-view="date">
+          <span class="nav-icon">◷</span> Sung on a date
+        </button>
+      </nav>
+
+      <div class="sidebar-section">
+        <p class="sidebar-heading">Beat</p>
+        <select id="filter-beat" class="chip-select">
+          <option value="">All beats</option>
+        </select>
+      </div>
+
+      <div class="sidebar-section">
+        <p class="sidebar-heading">Speed</p>
+        <select id="filter-speed" class="chip-select">
+          <option value="">All speeds</option>
+        </select>
+      </div>
+    </aside>
+
+    <main class="main">
+
+      <header class="topbar">
+        <div class="search-box">
+          <span class="search-icon">⌕</span>
+          <input type="text" id="name-search" placeholder="Search bhajans by name…" autocomplete="off" />
+        </div>
+        <div class="date-box" id="date-box" hidden>
+          <input type="date" id="date-search" />
+          <button id="date-clear" class="text-btn" hidden>Clear</button>
+        </div>
+      </header>
+
+      <section class="hero hero--featured">
+        <div class="hero-image-wrapper">
+          <img 
+            src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/66/Sathya_Sai_Baba_in_Darshan.jpg/640px-Sathya_Sai_Baba_in_Darshan.jpg" 
+            alt="Bhagawan Sri Sathya Sai Baba" 
+            class="hero-baba-img"
+          />
+        </div>
+        <div class="hero-text-content">
+          <span class="hero-tag">Bhajan Archive</span>
+          <h1>Sri Sathya Sai Nandigāna</h1>
+          <p id="hero-sub" class="hero-sub"></p>
+        </div>
+      </section>
+
+      <section class="deity-rail" id="deity-rail">
+        <!-- Populated via JS -->
+      </section>
+
+      <section class="results">
+        <div class="results-head">
+          <span id="results-title">All bhajans</span>
+          <span id="results-count" class="results-count"></span>
+        </div>
+
+        <div class="track-table" id="track-table">
+          <div class="track-row track-row--head">
+            <span class="col-index">#</span>
+            <span class="col-title">Title</span>
+            <span class="col-deity">Deity</span>
+            <span class="col-raga">Raga</span>
+            <span class="col-beat">Beat</span>
+            <span class="col-speed">Speed</span>
+            <span class="col-duration">⏱</span>
+          </div>
+          <div id="track-rows"></div>
+        </div>
+
+        <p id="empty-state" class="empty-state" hidden>
+          Nothing here yet — the archive is still being built.
+        </p>
+      </section>
+
+    </main>
+  </div>
+
+  <div class="detail-panel" id="detail-panel" hidden>
+    <button class="detail-close" id="detail-close">✕</button>
+    <div class="detail-content" id="detail-content"></div>
+  </div>
+
+  <script src="js/app.js"></script>
+</body>
+</html>
